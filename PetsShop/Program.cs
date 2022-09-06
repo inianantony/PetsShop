@@ -1,6 +1,10 @@
+using PetsShop.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 
 var app = builder.Build();
 
